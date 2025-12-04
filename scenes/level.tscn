@@ -1,0 +1,182 @@
+[gd_scene load_steps=33 format=3 uid="uid://bvmnv5d58f66h"]
+
+[ext_resource type="PackedScene" uid="uid://vj4epnurm4uw" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://lcy4d8i4xvcc" path="res://scripts/level.gd" id="1_b121j"]
+[ext_resource type="AudioStream" uid="uid://dok15n4he4ay2" path="res://quotes/welcome.mp3" id="2_64w2a"]
+[ext_resource type="AudioStream" uid="uid://crxikypejsnu4" path="res://sounds/Alarm.mp3" id="2_olg7q"]
+[ext_resource type="PackedScene" uid="uid://bv7gsjgu8clif" path="res://scenes/room.tscn" id="2_w7c3h"]
+[ext_resource type="AudioStream" uid="uid://cx6wkopbiochb" path="res://quotes/interact_pc.mp3" id="3_fpun6"]
+[ext_resource type="PackedScene" uid="uid://0ic4ts0bitl" path="res://objetcs/desk.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://co4mf613fb8fd" path="res://objetcs/chair.tscn" id="4_mx8sn"]
+[ext_resource type="AudioStream" uid="uid://cwp4001pfo732" path="res://quotes/1.mp3" id="4_xy2fk"]
+[ext_resource type="AudioStream" uid="uid://dq8bne08mf4jy" path="res://quotes/2.mp3" id="5_cmcjb"]
+[ext_resource type="PackedScene" uid="uid://bntmbedhm7ojd" path="res://glb_models/computador.glb" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://byedxw8vggng1" path="res://objetcs/door.tscn" id="6_2r41h"]
+[ext_resource type="AudioStream" uid="uid://cn6ulxqhlqmis" path="res://quotes/3.mp3" id="6_556r4"]
+[ext_resource type="AudioStream" uid="uid://unwuoe5oed6j" path="res://quotes/4.mp3" id="7_7agi7"]
+[ext_resource type="PackedScene" uid="uid://d0ya27amaw5tq" path="res://glb_models/curtain.glb" id="7_klq6b"]
+[ext_resource type="AudioStream" uid="uid://dd5bsxqls662y" path="res://quotes/5.mp3" id="8_kih21"]
+[ext_resource type="Texture2D" uid="uid://ci45a7dh2dx77" path="res://images/heat_ui.png" id="9_8c41q"]
+[ext_resource type="AudioStream" uid="uid://cp8hpex5ebfvl" path="res://quotes/error.mp3" id="9_w3o6u"]
+[ext_resource type="AudioStream" uid="uid://dmhqnj6mcisma" path="res://quotes/gg.mp3" id="10_2e2fo"]
+[ext_resource type="AudioStream" uid="uid://dybiex7yhjdnm" path="res://quotes/solve1.mp3" id="11_gur6y"]
+[ext_resource type="PackedScene" uid="uid://240ncv7avurv" path="res://objetcs/book.tscn" id="11_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://dabdk18se3cfc" path="res://scenes/exit.tscn" id="12_8iemx"]
+[ext_resource type="AudioStream" uid="uid://dwf00rl8q3q3" path="res://quotes/solve2.mp3" id="12_v3why"]
+[ext_resource type="AudioStream" uid="uid://c8tr8wdpbd6nb" path="res://quotes/solve3.mp3" id="13_asl66"]
+[ext_resource type="AudioStream" uid="uid://bcgox8kv0n2b1" path="res://quotes/solve4.mp3" id="14_2jdvr"]
+[ext_resource type="AudioStream" uid="uid://dl60q3baf8iaf" path="res://quotes/solve5.mp3" id="15_q4oe8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
+sky_top_color = Color(0.018399164, 0.02162953, 0.065225445, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 0.40980852
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.003921569, 0, 0.050980393, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+ground_curve = 1e-05
+
+[sub_resource type="Sky" id="Sky_w7c3h"]
+sky_material = SubResource("ProceduralSkyMaterial_2q6dc")
+
+[sub_resource type="Environment" id="Environment_w8frs"]
+background_mode = 2
+sky = SubResource("Sky_w7c3h")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_64w2a"]
+font_size = 18
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8iemx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8iemx"]
+
+[node name="level" type="Node3D"]
+script = ExtResource("1_b121j")
+voice_intro = ExtResource("2_64w2a")
+interact_pc = ExtResource("3_fpun6")
+enter_lvl1 = ExtResource("4_xy2fk")
+enter_lvl2 = ExtResource("5_cmcjb")
+enter_lvl3 = ExtResource("6_556r4")
+enter_lvl4 = ExtResource("7_7agi7")
+enter_lvl5 = ExtResource("8_kih21")
+error = ExtResource("9_w3o6u")
+credits = ExtResource("10_2e2fo")
+voice_lvl1_complete = ExtResource("11_gur6y")
+voice_lvl2_complete = ExtResource("12_v3why")
+voice_lvl3_complete = ExtResource("13_asl66")
+voice_lvl4_complete = ExtResource("14_2jdvr")
+voice_lvl5_complete = ExtResource("15_q4oe8")
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_olg7q")
+volume_db = 1.101
+parameters/looping = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w8frs")
+
+[node name="player" parent="." instance=ExtResource("1_2q6dc")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -9.214075, 2.9853215, 2.5999532)
+
+[node name="room_lamp" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.864793, 7.797991, -1.3661985)
+light_energy = 5.835
+shadow_enabled = true
+omni_range = 65.488
+omni_attenuation = 1.619
+
+[node name="room" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748265, 4.209625, -1.3204255)
+
+[node name="desk" parent="." instance=ExtResource("3_w8frs")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0.5479348, -1.2218347)
+
+[node name="chair" parent="." instance=ExtResource("4_mx8sn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.7662386, 0.6860392, -1.2215477)
+
+[node name="computador" parent="." groups=["computer"] instance=ExtResource("5_ppgk2")]
+transform = Transform3D(-2, 0, 7.7882873e-07, 0, 2, 0, -7.7882873e-07, 0, -2, -0.5526687, 5.336398, -0.61858726)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4110792, 4.2744126, -1.4002755)
+light_color = Color(0, 1, 0.44313726, 1)
+light_energy = 1.65
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.134
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 65.488
+omni_attenuation = 1.619
+
+[node name="curtain" parent="." instance=ExtResource("7_klq6b")]
+transform = Transform3D(2.7, 0, 0, 0, 1.3, 0, 0, 0, 1, -0.43876553, 3.5070333, 4.4332914)
+
+[node name="HeatOverlay" type="CanvasLayer" parent="."]
+
+[node name="heat_screen" type="Sprite2D" parent="HeatOverlay"]
+modulate = Color(1, 1, 1, 0.5686275)
+position = Vector2(575.5342, 324.028)
+rotation = 1.5707964
+scale = Vector2(0.85840386, 1.1351352)
+texture = ExtResource("9_8c41q")
+
+[node name="SubtitleLabel" type="Label" parent="HeatOverlay"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -46.0
+offset_right = -56.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_64w2a")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="book1" parent="." instance=ExtResource("11_t1rx8")]
+transform = Transform3D(0.036567684, 0, -0.034099918, 0, 0.05, 0, 0.034099918, 0, 0.036567684, 1.1204642, 1.1034923, -2.8785975)
+
+[node name="door" parent="." instance=ExtResource("6_2r41h")]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, -11.128759, 1.0276394, 2.7195184)
+
+[node name="door2" parent="." instance=ExtResource("6_2r41h")]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, 10.48321, 1.0797794, -1.2901677)
+
+[node name="exit" parent="." instance=ExtResource("12_8iemx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.568851, 0.4664998, -1.2235436)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.383682, 4.190979, -1.2794476)
+light_energy = 16.0
+light_indirect_energy = 0.0
+light_size = 1.0
+light_specular = 16.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.742278e-08, -4, 1.3113416e-07, 0, -1.7484555e-07, -3, 2, -1.7484555e-07, 5.7320566e-15, 30.468868, 3.6841664, -1.1780276)
+mesh = SubResource("PlaneMesh_8iemx")
+
+[node name="ExitZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.714497, 3.3148227, -1.2548313)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0838604, 0, 0)
+shape = SubResource("BoxShape3D_8iemx")
+
+[node name="AIVoicePlayer" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="body_entered" from="ExitZone" to="." method="_on_exit_zone_body_entered"]
+
+[editable path="player"]
+[editable path="player/PlayerUi"]
+[editable path="player/PlayerUi/computer"]
+[editable path="player/PlayerUi/computer/Ide"]
+[editable path="player/PlayerUi/menu_pause"]

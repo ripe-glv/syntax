@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://240ncv7avurv"]
+
+[ext_resource type="PackedScene" uid="uid://qc3tx4nvtk6x" path="res://glb_models/book1.glb" id="1_5cxah"]
+[ext_resource type="Material" uid="uid://yq1kkfadb43b" path="res://materials/book.tres" id="2_81ebt"]
+[ext_resource type="Texture2D" uid="uid://b8mfwvjvii5c6" path="res://images/radeon.jpeg" id="3_tqes4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bl40g"]
+lightmap_size_hint = Vector2i(47, 52)
+uv2_padding = 1.7
+size = Vector2(12, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4x6t"]
+albedo_texture = ExtResource("3_tqes4")
+
+[node name="book1" instance=ExtResource("1_5cxah")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.9961947, -0.08715574, 0, 0.08715574, 0.9961947, 0, 0, 0, 1, -7.124771, 1.9116415, -0.17804503)
+material_override = ExtResource("2_81ebt")
+mesh = SubResource("PlaneMesh_bl40g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0, 1, 7.0452194, 1.9116439, -0.17804503)
+material_override = SubResource("StandardMaterial3D_q4x6t")
+mesh = SubResource("PlaneMesh_bl40g")

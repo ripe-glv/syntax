@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx82avubcde6b"]
+
+[ext_resource type="Script" uid="uid://cd0qik68w3p1d" path="res://scripts/credits.gd" id="1_0bpdh"]
+
+[sub_resource type="Animation" id="Animation_2ckv8"]
+resource_name = "roll"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollingText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 671), Vector2(4, -1182)]
+}
+
+[sub_resource type="Animation" id="Animation_0ctdu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollingText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 671)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2fbfq"]
+_data = {
+&"RESET": SubResource("Animation_0ctdu"),
+&"roll": SubResource("Animation_2ckv8")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bpdh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollingText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 671.0
+offset_right = 1139.0
+offset_bottom = 1904.0
+bbcode_enabled = true
+text = "[center]
+[color=#7fcce3]> SYSTEM_STATUS: OFFLINE[/color]
+[color=#7fcce3]> USER_STATUS: ESCAPED[/color]
+
+[color=gray]// Executing final sequence...[/color]
+
+[b][font_size=60][color=#f5d547]SYNTAX[/color][/font_size][/b]
+
+[color=gray]__________________[/color]
+
+[i]Um jogo desenvolvido por[/i]
+[b]Filipe Carvalho Matos Galvão[/b]
+
+[color=gray]// Modules[/color]
+Game Design
+Programação
+Arte Técnica
+Level Design
+[b]Filipe Carvalho Matos Galvão[/b]
+
+[color=gray]__________________[/color]
+
+[b]AGRADECIMENTOS ESPECIAIS[/b]
+
+A todos que testaram e quebraram o sistema.
+
+E a você, Jogador(a).
+[i]Obrigado por codificar sua liberdade.[/i]
+
+[color=gray]__________________________[/color]
+
+[b][color=#7fcce3]> CONTEXTO DE COMPILAÇÃO[/color][/b]
+
+Projeto desenvolvido durante a disciplina de
+[b]Jogos Digitais[/b]
+na [b]UEFS[/b]
+(Universidade Estadual de Feira de Santana)
+
+
+[color=gray]__________________________[/color]
+
+[b][color=#7fcce3]> SUPERVISÃO DE SISTEMA[/color][/b]
+
+Agradecimentos especiais ao Professor
+[b]Victor Sarinho[/b]
+[i]Pela orientação na arquitetura deste mundo.[/i]
+
+[color=gray]__________________________[/color]
+
+[color=gray]__________________[/color]
+[color=#ff5555]> END OF LINE_[/color]
+[/center]"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2fbfq")
+}
+autoplay = "roll"

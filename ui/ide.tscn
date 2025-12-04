@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://rj177erh14yl"]
+
+[ext_resource type="Script" uid="uid://cs18lyt7wcrwx" path="res://scripts/ide.gd" id="1_gajxd"]
+[ext_resource type="Texture2D" uid="uid://b6na7gu30bngw" path="res://images/ide_opts.png" id="2_qw8uc"]
+[ext_resource type="Texture2D" uid="uid://bdgdlo0qtfhpt" path="res://images/dropdown.png" id="3_op8w2"]
+[ext_resource type="Texture2D" uid="uid://dyyoxbs8jmh48" path="res://images/play-button.png" id="4_ty1if"]
+
+[node name="Ide" type="CanvasLayer"]
+script = ExtResource("1_gajxd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.09411765, 0.09411765, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 207.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 207.0
+offset_top = 1.0
+offset_right = -743.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 57.0
+offset_right = -947.0
+offset_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16565639, 0.16565642, 0.16565639, 1)
+
+[node name="VSeparator" type="VSeparator" parent="."]
+offset_left = 200.0
+offset_top = 19.0
+offset_right = 211.0
+offset_bottom = 634.0
+
+[node name="IdeOpts" type="Sprite2D" parent="."]
+position = Vector2(1085, 15)
+texture = ExtResource("2_qw8uc")
+
+[node name="header_label" type="RichTextLabel" parent="."]
+offset_left = 211.0
+offset_top = 1.0
+offset_right = 411.0
+offset_bottom = 41.0
+bbcode_enabled = true
+
+[node name="task_label" type="RichTextLabel" parent="."]
+offset_left = 213.0
+offset_top = 34.0
+offset_right = 1113.0
+offset_bottom = 63.0
+bbcode_enabled = true
+
+[node name="RespostaIa" type="RichTextLabel" parent="."]
+offset_left = 209.0
+offset_top = 605.0
+offset_right = 1149.0
+offset_bottom = 653.0
+bbcode_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 20.0
+offset_top = 31.0
+offset_right = 39.0
+offset_bottom = 55.0
+text = "??"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 13.0
+offset_top = 61.0
+offset_right = 56.0
+offset_bottom = 85.0
+text = "??.?"
+
+[node name="Dropdown" type="Sprite2D" parent="."]
+position = Vector2(10, 42)
+texture = ExtResource("3_op8w2")
+
+[node name="CodeEdit" type="CodeEdit" parent="."]
+offset_left = 205.0
+offset_top = 64.0
+offset_right = 1149.0
+offset_bottom = 595.0
+caret_blink = true
+gutters_draw_breakpoints_gutter = true
+gutters_draw_line_numbers = true
+
+[node name="Run" type="Button" parent="."]
+offset_left = 1117.0
+offset_top = 35.0
+offset_right = 1637.0
+offset_bottom = 555.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("4_ty1if")
+flat = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 1114.0
+offset_right = 1152.0
+offset_bottom = 31.0
+flat = true

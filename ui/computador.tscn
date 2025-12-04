@@ -1,0 +1,345 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddrmcn3615531"]
+
+[ext_resource type="Texture2D" uid="uid://b8mfwvjvii5c6" path="res://images/radeon.jpeg" id="1_hioge"]
+[ext_resource type="Texture2D" uid="uid://dnjaqx7u7et7" path="res://images/folder.png" id="2_q8smp"]
+[ext_resource type="Texture2D" uid="uid://buhhex6pa1y07" path="res://images/on.png" id="3_yjnin"]
+[ext_resource type="Texture2D" uid="uid://kscb3581nrga" path="res://images/internet.png" id="4_3o7oi"]
+[ext_resource type="Texture2D" uid="uid://btl48gxiwrp8d" path="res://images/folder_opts.png" id="5_q8smp"]
+[ext_resource type="Texture2D" uid="uid://dvrilprbn0v8y" path="res://images/file.png" id="6_yjnin"]
+[ext_resource type="Texture2D" uid="uid://68cccn705wdu" path="res://images/desktop.png" id="7_3q7pe"]
+[ext_resource type="Texture2D" uid="uid://j1q24lhgti41" path="res://images/start.png" id="8_u6rj2"]
+[ext_resource type="PackedScene" uid="uid://rj177erh14yl" path="res://ui/ide.tscn" id="9_u6rj2"]
+
+[node name="computer" type="CanvasLayer"]
+
+[node name="Radeon" type="Sprite2D" parent="."]
+position = Vector2(575.00006, 324.99997)
+scale = Vector2(0.281, 0.281)
+texture = ExtResource("1_hioge")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = 601.0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.39215687)
+
+[node name="FolderIcon" type="Sprite2D" parent="."]
+position = Vector2(47.00003, 45.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_q8smp")
+
+[node name="On" type="Sprite2D" parent="."]
+position = Vector2(33, 626)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_yjnin")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1071.0
+offset_top = 602.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "         ??:??
+??/??/????"
+
+[node name="Internet" type="Sprite2D" parent="."]
+position = Vector2(1042, 626)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_3o7oi")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 40.0
+offset_top = 69.0
+offset_right = 80.0
+offset_bottom = 109.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "??"
+
+[node name="folder" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 24.0
+offset_right = 73.0
+offset_bottom = 68.0
+theme_type_variation = &"FlatButton"
+
+[node name="off" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 606.0
+offset_right = 53.0
+offset_bottom = 646.0
+theme_type_variation = &"FlatButton"
+
+[node name="folder2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="folder2"]
+offset_left = 94.0
+offset_top = 69.0
+offset_right = 879.0
+offset_bottom = 535.0
+color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="folder2"]
+offset_left = 94.0
+offset_top = 69.0
+offset_right = 878.0
+offset_bottom = 91.0
+color = Color(0.0038017277, 0.033411115, 0.21869367, 1)
+
+[node name="VSeparator" type="VSeparator" parent="folder2"]
+offset_left = 211.0
+offset_top = 102.0
+offset_right = 222.0
+offset_bottom = 520.0
+
+[node name="ColorRect3" type="ColorRect" parent="folder2"]
+offset_left = 94.0
+offset_top = 189.0
+offset_right = 216.0
+offset_bottom = 205.0
+color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+
+[node name="FolderIcon2" type="Sprite2D" parent="folder2"]
+position = Vector2(113, 197)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_q8smp")
+
+[node name="FolderOpts" type="Sprite2D" parent="folder2"]
+position = Vector2(840.00006, 80)
+scale = Vector2(0.12097787, 0.131761)
+texture = ExtResource("5_q8smp")
+
+[node name="help" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 139)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="1" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 207)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="2" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 275)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="3" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 343)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="4" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 411)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="5" type="Sprite2D" parent="folder2"]
+position = Vector2(267, 479)
+scale = Vector2(0.124, 0.108)
+texture = ExtResource("6_yjnin")
+
+[node name="helpLabel" type="RichTextLabel" parent="folder2"]
+offset_left = 304.0
+offset_top = 131.0
+offset_right = 344.0
+offset_bottom = 171.0
+text = "Help"
+
+[node name="1Label" type="RichTextLabel" parent="folder2"]
+offset_left = 306.0
+offset_top = 197.0
+offset_right = 346.0
+offset_bottom = 237.0
+text = "1"
+
+[node name="2Label" type="RichTextLabel" parent="folder2"]
+offset_left = 307.0
+offset_top = 265.0
+offset_right = 347.0
+offset_bottom = 305.0
+text = "2"
+
+[node name="3Label" type="RichTextLabel" parent="folder2"]
+offset_left = 306.0
+offset_top = 337.0
+offset_right = 346.0
+offset_bottom = 377.0
+text = "3"
+
+[node name="4Label" type="RichTextLabel" parent="folder2"]
+offset_left = 307.0
+offset_top = 404.0
+offset_right = 347.0
+offset_bottom = 444.0
+text = "4"
+
+[node name="5Label" type="RichTextLabel" parent="folder2"]
+offset_left = 307.0
+offset_top = 470.0
+offset_right = 347.0
+offset_bottom = 510.0
+text = "5"
+
+[node name="desktop" type="RichTextLabel" parent="folder2"]
+offset_left = 126.0
+offset_top = 166.0
+offset_right = 205.0
+offset_bottom = 183.0
+theme_override_font_sizes/normal_font_size = 11
+text = "Desktop"
+
+[node name="desktop3" type="RichTextLabel" parent="folder2"]
+offset_left = 126.0
+offset_top = 190.0
+offset_right = 205.0
+offset_bottom = 207.0
+theme_override_font_sizes/normal_font_size = 11
+text = "??"
+
+[node name="desktop2" type="RichTextLabel" parent="folder2"]
+offset_left = 125.0
+offset_top = 112.0
+offset_right = 204.0
+offset_bottom = 129.0
+theme_override_font_sizes/normal_font_size = 11
+text = "Start"
+
+[node name="helpButton" type="Button" parent="folder2"]
+offset_left = 245.0
+offset_top = 115.0
+offset_right = 343.0
+offset_bottom = 164.0
+theme_type_variation = &"FlatButton"
+
+[node name="closeFolder" type="Button" parent="folder2"]
+offset_left = 852.0
+offset_top = 69.0
+offset_right = 878.0
+offset_bottom = 90.0
+theme_type_variation = &"FlatButton"
+
+[node name="1Button" type="Button" parent="folder2"]
+offset_left = 245.0
+offset_top = 182.0
+offset_right = 343.0
+offset_bottom = 231.0
+theme_type_variation = &"FlatButton"
+
+[node name="2Button" type="Button" parent="folder2"]
+offset_left = 246.0
+offset_top = 250.0
+offset_right = 344.0
+offset_bottom = 299.0
+theme_type_variation = &"FlatButton"
+
+[node name="3Button" type="Button" parent="folder2"]
+offset_left = 246.0
+offset_top = 319.0
+offset_right = 344.0
+offset_bottom = 368.0
+theme_type_variation = &"FlatButton"
+
+[node name="4Button" type="Button" parent="folder2"]
+offset_left = 247.0
+offset_top = 387.0
+offset_right = 345.0
+offset_bottom = 436.0
+theme_type_variation = &"FlatButton"
+
+[node name="5Button" type="Button" parent="folder2"]
+offset_left = 246.0
+offset_top = 455.0
+offset_right = 344.0
+offset_bottom = 504.0
+theme_type_variation = &"FlatButton"
+
+[node name="Desktop" type="Sprite2D" parent="folder2"]
+position = Vector2(113, 174)
+texture = ExtResource("7_3q7pe")
+
+[node name="HSeparator" type="HSeparator" parent="folder2"]
+offset_left = 102.0
+offset_top = 133.0
+offset_right = 211.0
+offset_bottom = 174.0
+
+[node name="Start" type="Sprite2D" parent="folder2"]
+position = Vector2(114, 119)
+texture = ExtResource("8_u6rj2")
+
+[node name="Ide" parent="." instance=ExtResource("9_u6rj2")]
+visible = false
+
+[node name="help" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="help"]
+offset_left = 404.0
+offset_top = 17.0
+offset_right = 1060.0
+offset_bottom = 614.0
+
+[node name="ColorRect4" type="ColorRect" parent="help"]
+offset_left = 404.0
+offset_top = 17.0
+offset_right = 1060.0
+offset_bottom = 41.0
+color = Color(0.0038017277, 0.033411115, 0.21869367, 1)
+
+[node name="FolderOpts2" type="Sprite2D" parent="help"]
+position = Vector2(1022.00006, 29.000008)
+scale = Vector2(0.12097787, 0.131761)
+texture = ExtResource("5_q8smp")
+
+[node name="closeFolder2" type="Button" parent="help"]
+offset_left = 1034.0
+offset_top = 17.0
+offset_right = 1060.0
+offset_bottom = 41.0
+theme_type_variation = &"FlatButton"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="help"]
+offset_left = 418.0
+offset_top = 44.0
+offset_right = 1058.0
+offset_bottom = 602.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[i][color=gray]>> ACCESSING RECOVERED FILE: LAST_LOG.txt
+>> AUTHOR: SUBJECT_04 (STATUS: DECEASED)[/color][/i]
+
+[b][color=#ff5555]IF YOU ARE READING THIS, I AM ALREADY DEAD.[/color][/b]
+
+The AI... it controls everything through this terminal. It thinks this is a game, but I figured out how it \"thinks\". It follows code rules. If you want to get out of here, you have to rewrite its reality.
+
+I left these notes before the oxygen runs out. Learn fast.
+
+[b][color=#f5d547]1. VARIABLES (Its Memory)[/color][/b]
+Everything in this room is controlled by \"Variables\". It is how it defines what is real.
+[color=#7fcce3]Syntax:[/color] [code]var name = value[/code]
+If it defines [code]var door = \"locked\"[/code], the door will NOT open. You need to hack the [b]value[/b] (what comes after the equals sign). Change its reality!
+
+[b][color=#f5d547]2. DATA TYPES (Warning!)[/color][/b]
+It is a stupid, exact machine. If you get the type wrong, the system crashes (and you die).
+
+- [b]Text (String):[/b] Names or states. MUST HAVE QUOTES.
+  [code]var light = \"on\"[/code] (This works)
+  [code]var light = on[/code] (ERROR! Without quotes it crashes)
+
+- [b]Numbers (Int):[/b] For temperature or math. NO QUOTES.
+  [code]var temperature = 20[/code]
+
+- [b]Decisions (Boolean):[/b] There are only two truths. [color=#bd93f9]true[/color] (yes/on) or [color=#bd93f9]false[/color] (no/off). NO QUOTES.
+  [code]var system_active = false[/code]
+
+[b][color=#f5d547]3. FUNCTIONS (Actions)[/color][/b]
+Variables store info, but [b]Functions[/b] DO things. They always end with parentheses [code]()[/code].
+If you see a line saying [code]lock_door()[/code], delete it! Write the opposite function, like [code]unlock_door()[/code]. Use its own weapons against it.
+
+[b][color=#f5d547]4. THE SECRET OF LEVEL 4[/color][/b]
+The AI is blind to the physical world. It only sees code.
+I hid the password somewhere in the room, in the real world, where it can't delete it.
+[i]Look at the walls... under the tables...[/i]
+
+[right][color=gray]Good luck. You're going to need it.[/color][/right]"

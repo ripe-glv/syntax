@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://yq1kkfadb43b"]
+
+[ext_resource type="Texture2D" uid="uid://br54a677lkl1q" path="res://images/pass2.png" id="1_ylsn7"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0.94509804, 0.95686275, 0.6862745, 1)
+albedo_texture = ExtResource("1_ylsn7")
